@@ -1,7 +1,5 @@
 name: Build Bazzite
 on:
-<<<<<<< HEAD
-=======
   schedule:
     - cron: "40 4 * * 1" # 4:40 utc monday
   pull_request:
@@ -31,18 +29,6 @@ on:
       - "press_kit/**"
       - ".github/workflows/build_iso*.yml"
   merge_group:
->>>>>>> upstream/main
-  workflow_dispatch:
-    inputs:
-      handwritten:
-        description: 'Small changelog:'
-      # Run with this periodically to analyze the image again
-      # As package drift will make the plan eventually non-ideal
-      # (existing users will have to redownload most of the image)
-      fresh-rechunk:
-        description: 'Clear rechunk history'
-        type: boolean
-        default: false
 env:
   PULL_IMAGE_REGISTRY: ghcr.io/ublue-os
   PUSH_IMAGE_REGISTRY: ghcr.io/${{ github.repository_owner }}
